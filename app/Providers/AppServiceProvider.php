@@ -25,10 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::share('pages',
+        /*View::share('pages',
             WinkPage::where('slug', '!=', 'index')
                 ->orderBy('created_at', 'ASC')
                 ->get()
-        );
+        );*/
     }
 }
