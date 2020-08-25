@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name') }}</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link href="{{ mix('css/main.css') }}" rel="stylesheet">
-    <livewire:styles/>
+    @include('partials.head')
 </head>
-<body class="font-sans text-black leading-tight antialiased bg-white">
+<body class="font-sans text-black leading-tight antialiased bg-white px-6 md:px-16 py-10 flex flex-col min-h-screen">
 <header>
-    @include('partials.nav')
+    @hasSection('navback')
+        @yield('navback')
+    @else
+        @include('partials.nav')
+    @endif
 </header>
-<div class="px-6 py-4">
-    <main>
-        @yield('content')
-    </main>
-    <footer>
+<main class="mt-10 flex-grow max-w-md prose prose-sm sm:prose lg:prose-lg">
+    @yield('content')
+</main>
+<footer class="mt-10">
+    @hasSection('author')
+        @yield('author')
+    @else
         @include('partials.footer')
-    </footer>
-</div>
-<livewire:scripts/>
+    @endif
+</footer>
 </body>
 </html>

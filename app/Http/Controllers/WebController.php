@@ -9,7 +9,7 @@ class WebController extends Controller
 {
     public function index()
     {
-        $page = WinkPage::whereSlug('index')
+        $page = WinkPage::whereSlug('inicio')
             ->firstOrFail();
 
         return view('index', compact('page'));
@@ -17,29 +17,30 @@ class WebController extends Controller
 
     public function posts()
     {
-        $posts = WinkPost::with('tags')
-            ->live()
-            ->orderBy('publish_date', 'DESC')
-            ->simplePaginate(1);
+        $page = WinkPage::whereSlug('publicaciones')
+            ->first();
 
-        return view('posts.index', compact('posts'));
+        $posts = WinkPost::live()
+            ->orderBy('publish_date', 'DESC')
+            ->get();
+
+        return view('posts.index', compact('posts', 'page'));
     }
 
     public function post($slug)
     {
+        $page = WinkPage::whereSlug($slug)
+            ->first();
+
+        if ($page) {
+            return view('pages.show', compact('page'));
+        }
+
         $post = WinkPost::with('tags')
             ->whereSlug($slug)
             ->live()
             ->firstOrFail();
 
         return view('posts.show', compact('post'));
-    }
-
-    public function page($slug)
-    {
-        $page = WinkPage::whereSlug($slug)
-            ->firstOrFail();
-
-        return view('pages.show', compact('page'));
     }
 }
