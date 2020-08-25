@@ -4,6 +4,7 @@
             🧐 {{ $post->title }}
         </span>
     </div>
+
     <a href="{{ route('posts.index') }}" class="block uppercase mt-4 tracking-wide text-sm font-semibold no-underline text-gray-600">
         👈 Atrás
     </a>

@@ -15,11 +15,7 @@
     @yield('content')
 </main>
 <footer class="mt-10">
-    @hasSection('author')
-        @yield('author')
-    @else
-        @include('partials.footer')
-    @endif
+    @include('partials.footer')
 </footer>
 </body>
 </html>

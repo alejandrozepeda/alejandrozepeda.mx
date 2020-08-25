@@ -9,7 +9,3 @@
 @section('content')
     {!! $post->content !!}
 @endsection
-
-@section('author')
-    @include('partials.author')
-@endsection
