@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'WebController@index')->name('index');
-Route::get('/publicaciones', 'WebController@posts')->name('posts.index');
+Route::get('/notas', 'WebController@posts')->name('posts.index');
 Route::get('/{slug}', 'WebController@post')->name('posts.show');

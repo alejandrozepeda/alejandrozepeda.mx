@@ -17,7 +17,7 @@ class WebController extends Controller
 
     public function posts()
     {
-        $page = WinkPage::whereSlug('publicaciones')
+        $page = WinkPage::whereSlug('notas')
             ->first();
 
         $posts = WinkPost::live()
