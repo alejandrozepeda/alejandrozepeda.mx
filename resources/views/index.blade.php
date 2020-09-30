@@ -5,7 +5,7 @@
 @endpush
 
 @push('meta_description')
-    <meta name="description" content="Hola, soy Alejandro Zepeda, ingeniero de software, apasionado por la programación web, la comunidad maker y la creación de side-projects.">
+    <meta name="description" content="Hola, soy Alejandro Zepeda, ingeniero de software, apasionado de la programación web y creación de side-projects.">
 @endpush
 
 @section('content')

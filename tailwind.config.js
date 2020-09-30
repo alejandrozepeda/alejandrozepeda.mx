@@ -1,10 +1,13 @@
 module.exports = {
-  purge: [],
-  theme: {
-    extend: {},
-  },
-  variants: {},
-  plugins: [
-      require('@tailwindcss/typography'),
-  ],
+    purge: [
+        './resources/views/**/*.blade.php',
+        './resources/css/**/*.css',
+    ],
+    theme: {
+        extend: {},
+    },
+    variants: {},
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 }
