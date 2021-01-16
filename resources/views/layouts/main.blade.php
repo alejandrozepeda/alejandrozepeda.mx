@@ -11,10 +11,10 @@
         @include('partials.nav')
     @endif
 </header>
-<main class="mt-10 flex-grow max-w-md prose prose-sm sm:prose lg:prose-lg">
+<main class="mt-5 md:mt-10 flex-grow max-w-md prose prose-sm sm:prose lg:prose-lg">
     @yield('content')
 </main>
-<footer class="mt-10">
+<footer class="mt-5 md:mt-10">
     @include('partials.footer')
 </footer>
 </body>
