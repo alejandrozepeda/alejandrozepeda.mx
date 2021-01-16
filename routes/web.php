@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'WebController@index')->name('index');
-Route::get('/notas', 'WebController@posts')->name('posts.index');
-Route::get('/{slug}', 'WebController@post')->name('posts.show');
+Route::get('/', [\App\Http\Controllers\WebController::class, 'index'])->name('index');
+Route::get('/notas', [\App\Http\Controllers\WebController::class, 'posts'])->name('posts.index');
+Route::get('/{slug}', [\App\Http\Controllers\WebController::class, 'post'])->name('posts.show');
