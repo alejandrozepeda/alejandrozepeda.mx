@@ -8,7 +8,7 @@
     <div class="flex">
         @foreach($pages as $page)
             <a href="/{{ $page->slug }}"
-               class="uppercase mt-4 mr-3 tracking-wide text-sm hover:text-black font-semibold no-underline {{ (request()->is($page->slug . '*')) ? 'text-black' : 'text-gray-600' }}">
+               class="uppercase mt-4 mr-3 tracking-wide text-sm hover:text-black font-semibold no-underline {{ (request()->is($page->slug . '*')) ? 'text-black font-bold' : 'text-gray-600' }}">
                 {{ $page->title }}
             </a>
         @endforeach
