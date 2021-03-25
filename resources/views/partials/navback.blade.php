@@ -1,7 +1,7 @@
 <nav class="bg-white">
     <div class="flex items-center justify-between flex-wrap">
         <span class="text-black font-extrabold leading-none text-xl lg:text-3xl lg:leading-tight">
-            🧐 {{ $post->title }}
+            {{ $post->title }}
         </span>
     </div>
 

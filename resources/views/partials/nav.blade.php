@@ -1,7 +1,7 @@
 <nav class="bg-white">
     <div class="flex items-center justify-between flex-wrap">
         <a href="{{ route('index') }}" class="text-black font-extrabold leading-none text-xl lg:text-3xl lg:leading-tight">
-            🤠 {{ config('app.name') }}
+            {{ config('app.name') }}
         </a>
     </div>
 
